@@ -1,47 +1,55 @@
 package me.adedoja.category;
 
+import javax.persistence.*;
+
+@Entity
 public class Category {
-    private int id;
-    private String name;
-    private int parent_id;
-    private int date_added;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 
-    public Category(int id, String name, int parent_id, int date_added) {
-        this.id = id;
-        this.name = name;
-        this.parent_id = parent_id;
-        this.date_added = date_added;
+    private int cat_id;
+    private String cat_name;
+    private int cat_parent_id;
+    private int cat_date_added;
+
+    public Category() { }
+
+    public Category(int cat_id, String cat_name, int cat_parent_id, int cat_date_added) {
+        this.cat_id = cat_id;
+        this.cat_name = cat_name;
+        this.cat_parent_id = cat_parent_id;
+        this.cat_date_added = cat_date_added;
     }
 
-    public int getId() {
-        return id;
+    public int getCat_date_added() {
+        return cat_date_added;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCat_date_added(int cat_date_added) {
+        this.cat_date_added = cat_date_added;
     }
 
-    public String getName() {
-        return name;
+    public int getCat_parent_id() {
+        return cat_parent_id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCat_parent_id(int cat_parent_id) {
+        this.cat_parent_id = cat_parent_id;
     }
 
-    public int getDate_added() {
-        return date_added;
+    public String getCat_name() {
+        return cat_name;
     }
 
-    public void setDate_added(int date_added) {
-        this.date_added = date_added;
+    public void setCat_name(String cat_name) {
+        this.cat_name = cat_name;
     }
 
-    public int getParent_id() {
-        return parent_id;
+    public int getCat_id() {
+        return cat_id;
     }
 
-    public void setParent_id(int parent_id) {
-        this.parent_id = parent_id;
+    public void setCat_id(int cat_id) {
+        this.cat_id = cat_id;
     }
 }
